@@ -4,6 +4,13 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 
+import axios from 'axios'
+
+Vue.prototype.$axios = axios
+Vue.prototype.$log = function (...args) {
+  console.log(`[${this.$options.name}]:: `, ...args)
+}
+
 Vue.config.productionTip = false
 
 new Vue({
